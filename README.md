@@ -1,37 +1,49 @@
 # The CSS Challenges
 
-* CSS-only navigation menu
-  * 3 levels of menus
-  * Responsive
-    * No hover, but click
+## Basic
+* [ ] SMACSS
 
-* Futuristic UI
-  * Slow animated deploy of page
+* [ ] SCSS
 
-* 3D
-  * Test svg-based transparency
-  * Test png-based transparency
+## Intermediate
+* [ ] CSS-only navigation menu
+  * [ ] 3 levels of menus
+  * [ ] Responsive
+    * [ ] No hover, but click
 
-* Animations
+* [ ] Advanced units https://www.w3schools.com/cssref/css_units.asp
 
-* Advanced selectors
-  * Automatically set to red all buttons that have "delete" in them
+* [ ] Flexbox
 
-* CSS-only confirmation for buttons
-  * Click/hover over button, deploy secondary frame with confirm delete
+* [ ] Advanced selectors
+  * [ ] Automatically set to red all buttons that have "delete" in them
 
-* CSS-only browser kicker
-  * Disable page if browser does not support a specific CSS characteristic
-  * Cross-browser datetime-local component that uses native datetime-local for browsers that support it or a custom JS/react thinguie for browsers that do not support it
+* [ ] Chained selectors:
+  * [ ] Bargraph. On hover over the items in the key, the corresponding columns are highlighted.
 
-* `calc`
+* [ ] CSS before and after
 
-* Advanced units https://www.w3schools.com/cssref/css_units.asp
+* [ ] `calc`
 
-* Flexbox
+## Advanced
+* [ ] Futuristic UI
+  * [ ] Slow animated deploy of page
 
-* nav-index, nav-down, nav-up - Keyboard-only navigation system
+* [ ] 3D
+  * [ ] Test svg-based transparency
+  * [ ] Test png-based transparency
 
-* Selector to select parent
+* [ ] Animations
 
-* Rounded-border buttons that lose roundness when put together.
+* [ ] CSS-only confirmation for buttons
+  * [ ] Click/hover over button, deploy secondary frame with confirm delete
+
+* [ ] CSS-only browser kicker
+  * [ ] Disable page if browser does not support a specific CSS characteristic
+  * [ ] Cross-browser datetime-local component that uses native datetime-local for browsers that support it or a custom JS/react thinguie for browsers that do not support it
+
+* [ ] nav-index, nav-down, nav-up - Keyboard-only navigation system
+
+* [ ] Selector to select parent
+
+* [ ] Rounded-border buttons that lose roundness when put together.
