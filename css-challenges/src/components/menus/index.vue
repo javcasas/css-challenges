@@ -1,12 +1,18 @@
 <template>
-  <div class="navigation-menu">
+  <div class="body">
     <nav>
       <ul class="left-menu">
         <li>
-          <a href="#">Catalog</a>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a>Catalog</a>
           <ul>
             <li>
-              <a href="#">High power gizmos</a>
+              <a href="#">View full catalog</a>
+            </li>
+            <li>
+              <a>High power gizmos</a>
               <ul>
                 <li>
                   <a href="#">Electrifying transformers</a>
@@ -17,9 +23,9 @@
               </ul>
             </li>
             <li>
-              <a href="#">Low power gizmos</a>
+              <a>Low power gizmos</a>
               <ul>
-                <li>
+                <li class="active">
                   <a href="#">Cheap-ass batteries</a>
                 </li>
                 <li>
@@ -65,12 +71,84 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
-nav {
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+$general-background: #eee;
+$nav-background: #cca;
+$nav-border: #fcc;
+$nav-active: red;
+$subnav-background: white;
+$subnav-border: #ccc;
+$subnav-active: red;
+
+
+.body {
+  background-color: $general-background;
 }
 
+nav {
+  border: 2px solid $nav-border;
+  background-color: $nav-background;
+  padding: 0px;
 
+  // General behaviour
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      display: inline-block;
+      position: relative;
+
+      & > a {
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+      }
+
+      & > ul {
+        width: 200px;
+        position: absolute;
+        display: none;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid $subnav-border;
+        & > li {
+          width: 100%;
+        }
+      }
+
+      &:hover > ul {
+        display: block;
+      }
+    }
+  }
+  ul.right-menu {
+    float: right;
+  }
+
+  // 1st level behaviour
+  & > ul {
+    & > li {
+    }
+  }
+
+  // 2nd level behaviour
+  & > ul > li > ul {
+    background-color: $subnav-background;
+    & > li:not(:last-child) {
+      border-bottom: 1px solid $subnav-border;
+    }
+  }
+
+  // 3rd level behaviour
+  & > ul > li > ul > li > ul {
+    top: 0;
+    left: 100%;
+    background-color: $subnav-background;
+    & > li:not(:last-child) {
+      border-bottom: 1px solid $subnav-border;
+    }
+  }
+}
 </style>
