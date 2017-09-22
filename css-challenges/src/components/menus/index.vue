@@ -119,10 +119,14 @@ nav {
       & > ul {
         width: 200px;
         position: absolute;
-        display: none;
+        //display: none;
+        //display: block;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid $subnav-border;
+        max-height: 0px;
+        transition: max-height 1s ease-out;
+        overflow: hidden;
         & > li {
           width: 100%;
         }
@@ -130,7 +134,10 @@ nav {
 
       // but when hovered we show it
       &:hover > ul {
-        display: block;
+        //display: block;
+        max-height: 500px;
+        transition: height 1s ease-in;
+        overflow: initial;
       }
     }
   }
