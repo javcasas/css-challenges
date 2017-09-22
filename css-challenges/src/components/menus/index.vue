@@ -83,6 +83,7 @@ $subnav-active: red;
 
 .body {
   background-color: $general-background;
+  z-index: 0;
 }
 
 nav {
@@ -119,14 +120,13 @@ nav {
       & > ul {
         width: 200px;
         position: absolute;
-        //display: none;
-        //display: block;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid $subnav-border;
         max-height: 0px;
-        transition: max-height 1s ease-out;
-        overflow: hidden;
+        transition: max-height 1s ease-out, z-index 1s step-end;
+        z-index: -100;
+        //overflow: hidden;
         & > li {
           width: 100%;
         }
@@ -134,10 +134,9 @@ nav {
 
       // but when hovered we show it
       &:hover > ul {
-        //display: block;
         max-height: 500px;
-        transition: height 1s ease-in;
-        overflow: initial;
+        transition: max-height 1s ease-in, z-index 1s step-start;
+        z-index: 0;
       }
     }
   }
