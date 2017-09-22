@@ -5,7 +5,7 @@
         <li>
           <a href="#">Home</a>
         </li>
-        <li>
+        <li class="active">
           <a>Catalog</a>
           <ul>
             <li>
@@ -22,7 +22,7 @@
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="active">
               <a>Low power gizmos</a>
               <ul>
                 <li class="active">
@@ -73,8 +73,9 @@ export default {
 
 $general-background: #eee;
 $nav-background: #cca;
-$nav-border: #fcc;
+$nav-border: #aa5;
 $nav-active: red;
+$nav-highlighted: green;
 $subnav-background: white;
 $subnav-border: #ccc;
 $subnav-active: red;
@@ -100,12 +101,21 @@ nav {
       display: inline-block;
       position: relative;
 
+      &.active {
+        background-color: $nav-active;
+      }
+
+      &:hover {
+        background-color: $nav-highlighted;
+      }
+
       & > a {
         padding: 10px;
         display: block;
         text-decoration: none;
       }
 
+      // by default a subitem is hidden
       & > ul {
         width: 200px;
         position: absolute;
@@ -118,6 +128,7 @@ nav {
         }
       }
 
+      // but when hovered we show it
       &:hover > ul {
         display: block;
       }
