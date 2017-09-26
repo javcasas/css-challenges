@@ -123,10 +123,8 @@ nav {
         padding: 5px;
         border-radius: 5px;
         border: 1px solid $subnav-border;
-        max-height: 0px;
-        transition: max-height 1s ease-out, z-index 1s step-end;
-        z-index: -100;
-        //overflow: hidden;
+        transition: visibility 0.5s step-end;
+        visibility: hidden;
         & > li {
           width: 100%;
         }
@@ -134,9 +132,8 @@ nav {
 
       // but when hovered we show it
       &:hover > ul {
-        max-height: 500px;
-        transition: max-height 1s ease-in, z-index 1s step-start;
-        z-index: 0;
+        transition: visibility 0.1s step-start;
+        visibility: visible;
       }
     }
   }
