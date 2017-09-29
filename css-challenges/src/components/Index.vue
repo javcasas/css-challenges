@@ -5,6 +5,9 @@
         <li>
           <router-link to="menus">Menus</router-link>
         </li>
+        <li>
+          <router-link to="advanced_selectors">Advanced selectors</router-link>
+        </li>
       </ul>
     </nav>
   </div>
