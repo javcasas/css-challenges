@@ -80,9 +80,12 @@ $subnav-background: white;
 $subnav-border: #ccc;
 $subnav-active: red;
 
+$responsive-sm: 480px;
+
 
 .body {
   background-color: $general-background;
+  z-index: 0;
 }
 
 nav {
@@ -92,12 +95,21 @@ nav {
 
   // General behaviour
   ul {
+
     display: inline-block;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    @media (max-width: $responsive-sm) {
+      width: 100%;
+    }
 
     & > li {
+      @media (max-width: $responsive-sm) {
+        display: block;
+        width: 100%;
+        position: static;
+      }
       display: inline-block;
       position: relative;
 
@@ -117,12 +129,21 @@ nav {
 
       // by default a subitem is hidden
       & > ul {
+        @media (max-width: $responsive-sm) {
+          width: 100%;
+          position: static;
+          display: none;
+          border-radius: 0;
+          padding: 0px;
+          border: 0;
+        }
         width: 200px;
         position: absolute;
-        display: none;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid $subnav-border;
+        transition: visibility 0.5s step-end;
+        visibility: hidden;
         & > li {
           width: 100%;
         }
@@ -130,12 +151,22 @@ nav {
 
       // but when hovered we show it
       &:hover > ul {
-        display: block;
+        @media (max-width: $responsive-sm) {
+          width: 100%;
+          position: static;
+          display: block;
+        }
+        transition: visibility 0.1s step-start;
+        visibility: visible;
       }
     }
   }
+
   ul.right-menu {
     float: right;
+    @media (max-width: $responsive-sm) {
+      float: none;
+    }
   }
 
   // 1st level behaviour
@@ -147,6 +178,9 @@ nav {
   // 2nd level behaviour
   & > ul > li > ul {
     background-color: $subnav-background;
+    @media (max-width: $responsive-sm) {
+      font-size: 0.8em;
+    }
     & > li:not(:last-child) {
       border-bottom: 1px solid $subnav-border;
     }
