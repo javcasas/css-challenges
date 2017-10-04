@@ -1,15 +1,35 @@
 <template>
   <div class="body">
-    <ul>
-      <li><button>This is a button</button></li>
-      <li><button>This is a button</button></li>
-    </ul>
-    <div class="selectable-progress-bar">
-      <input type="radio" name="select1" />
-      <input type="radio" name="select1" />
-      <input type="radio" name="select1" />
-      <input type="radio" name="select1" />
-      <input type="radio" name="select1" />
+    <div class="component">
+      <h1>Snap together buttons</h1>
+      <div class="snap-together-buttons">
+        <button>Button</button>
+      </div>
+      <div class="snap-together-buttons">
+        <button>Button</button>
+        <button>Button</button>
+      </div>
+      <div class="snap-together-buttons">
+        <button>Button</button>
+        <button>Button</button>
+        <button>Button</button>
+      </div>
+      <div class="snap-together-buttons">
+        <button>Button</button>
+        <button>Button</button>
+        <button>Button</button>
+        <button>Button</button>
+      </div>
+    </div>
+    <div class="component">
+      <h1>Selectable progress bar</h1>
+      <div class="selectable-progress-bar">
+        <input type="radio" name="select1" />
+        <input type="radio" name="select1" />
+        <input type="radio" name="select1" />
+        <input type="radio" name="select1" />
+        <input type="radio" name="select1" />
+      </div>
     </div>
   </div>
 </template>
@@ -42,11 +62,24 @@ $active: blue;
 
 
 .body {
+  margin: 10px 30px;
+  @media (max-width: $responsive-sm) {
+    margin: 10px 10px;
+  }
 }
 
-button {
-  padding: 10px;
+
+div.component {
   width: 100%;
+  text-align: center;
+  h1 {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-style: oblique;
+  }
+
 }
 
 .selectable-progress-bar {
@@ -54,29 +87,52 @@ button {
     width: 100px;
     height: 10px;
     visibility: hidden;
-    margin: 0;
+    margin: -5px;
+    position: relative;
 
     &:first-child {
       width: 16px;
     }
     &:not(:first-child)::before {
+      // The bar
       width: 80px;
-      height: 10px;
+      height: 4px;
       content: "";
       visibility: visible;
       display: inline-block;
       background-color: $active;
       margin-bottom: 5px;
+      z-index: 0;
+      transition-duration: 0.3s;
+      transition-property: all;
     }
 
     &::after {
-      width: 20px;
-      height: 20px;
+      // The circle
+      width: 15px;
+      height: 15px;
       content: "";
       visibility: visible;
       display: inline-block;
       background-color: $active;
       border-radius: 100%;
+      position: absolute;
+      z-index: 1;
+      bottom: -2px;
+      right: 5px;
+      transition-duration: 0.3s;
+      transition-property: all;
+    }
+
+    &:hover::after,
+    &:checked:hover::after,
+    {
+      width: 25px;
+      height: 25px;
+      background-color: white !important; // FIXME
+      bottom: -7px;
+      right: 0px;
+      border: 1px solid black;
     }
 
     &:checked::before {
@@ -85,11 +141,33 @@ button {
 
     &:checked::after {
       background-color: $active;
+      width: 20px;
+      height: 20px;
+      bottom: -4px;
+      right: 0;
     }
 
     &:checked ~ input::before,
-    &:checked ~ input::after {
+    &:checked ~ input::after
+    {
       background-color: $not-active;
+    }
+  }
+}
+
+div.snap-together-buttons {
+  margin: 10px;
+  button {
+    border-radius: 0px 0px 0px 0px;
+    padding: 10px;
+    margin: 0px;
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
 }
