@@ -57,8 +57,8 @@ $subnav-active: red;
 
 $responsive-sm: 480px;
 
-$not-active: grey;
-$active: blue;
+$not-active: rgb(192, 192, 192);
+$active: rgb(96, 128, 255);
 
 
 .body {
@@ -158,16 +158,34 @@ div.component {
 div.snap-together-buttons {
   margin: 10px;
   button {
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     padding: 10px;
-    margin: 0px;
+    margin-left: -2px;
+    margin-right: -2px;
+    border: 1px solid #555;
+    background-color: #ccc;
+    border-left: 1.5px solid #eee;
+    border-top: 1.5px solid #eee;
+    border-bottom: 1.5px solid #555;
+    border-right: 1.5px solid #555;
+
+    &:active {
+      border-left-color: #555;
+      border-top-color: #555;
+      border-bottom-color: #eee;
+      border-right-color: #eee;
+    }
+
     &:first-child {
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
     }
     &:last-child {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    &:hover {
+      box-shadow: 0px 3px 10px #888888;
     }
   }
 }
