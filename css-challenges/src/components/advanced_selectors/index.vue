@@ -31,6 +31,20 @@
         <input type="radio" name="select1" />
       </div>
     </div>
+    <div class="component">
+      <h1>Form</h1>
+      <div class="floating-form">
+        <h2>Important message</h2>
+        <p>The foos are required by the bars.</p>
+        <p>What would you like to do?</p>
+        <div class="form-auto-buttons">
+          <input type="button" value="Delete the Foos" />
+          <input type="button" value="Delete the Bars" />
+          <input type="button" value="Proceed" />
+          <input type="button" value="Do nothing" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -186,6 +200,46 @@ div.snap-together-buttons {
     }
     &:hover {
       box-shadow: 0px 3px 10px #888888;
+    }
+  }
+}
+
+.floating-form {
+  /* note that I have to use Inputs because
+   * in an input the text is an attribute
+   * and thus I can match on it with standard CSS selectors
+   */
+  input[type=button] {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid #777;
+    color: #777;
+    font-size: 15px;
+    font-weight: bold;
+    transition-property: all;
+    transition-duration: 0.3s;
+    &:hover {
+      box-shadow: 0 0 4px 2px #999;
+    }
+  }
+  .form-auto-buttons {
+    input[type=button]{
+      &[value*=Delete],
+      &[value*=delete] {
+        border-color: rgb(210, 0, 0);
+        color: rgb(210, 0, 0);
+        &:hover {
+          box-shadow: 0 0 4px 2px red;
+        }
+      }
+      &[value*=Ok], &[value*=ok], &[value*=Proceed], &[value*=proceed] {
+        border-color: rgb(0, 210, 0);
+        color: rgb(0, 210, 0);
+        &:hover {
+          box-shadow: 0 0 4px 2px green;
+        }
+      }
     }
   }
 }
