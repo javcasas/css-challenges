@@ -74,6 +74,9 @@ $responsive-sm: 480px;
 $not-active: rgb(192, 192, 192);
 $active: rgb(96, 128, 255);
 
+$default-color: #777;
+$danger-color: rgb(210, 0, 0);
+$success-color: rgb(0, 210, 0);
 
 .body {
   margin: 10px 30px;
@@ -209,12 +212,27 @@ div.snap-together-buttons {
    * in an input the text is an attribute
    * and thus I can match on it with standard CSS selectors
    */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0px 5px 0px -2px #888;
+
+  h2 {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-size: 2.3em;
+    font-family: sans-serif;
+    font-weight: 800;
+    margin-top: 10px;
+  }
+
   input[type=button] {
     padding: 10px;
     border-radius: 8px;
     background-color: white;
-    border: 2px solid #777;
-    color: #777;
+    border: 2px solid $default-color;
+    color: $default-color;
     font-size: 15px;
     font-weight: bold;
     transition-property: all;
@@ -222,22 +240,41 @@ div.snap-together-buttons {
     &:hover {
       box-shadow: 0 0 4px 2px #999;
     }
+    &:active {
+      box-shadow: none;
+      background-color: $default-color;
+      color: white;
+      transition-duration: 0s;
+    }
   }
   .form-auto-buttons {
+    padding: 10px;
     input[type=button]{
       &[value*=Delete],
       &[value*=delete] {
-        border-color: rgb(210, 0, 0);
-        color: rgb(210, 0, 0);
+        border-color: $danger-color;
+        color: $danger-color;
         &:hover {
           box-shadow: 0 0 4px 2px red;
         }
+        &:active {
+          box-shadow: none;
+          background-color: $danger-color;
+          color: white;
+          transition-duration: 0s;
+        }
       }
       &[value*=Ok], &[value*=ok], &[value*=Proceed], &[value*=proceed] {
-        border-color: rgb(0, 210, 0);
-        color: rgb(0, 210, 0);
+        border-color: $success-color;
+        color: $success-color;
         &:hover {
           box-shadow: 0 0 4px 2px green;
+        }
+        &:active {
+          box-shadow: none;
+          background-color: $success-color;
+          color: white;
+          transition-duration: 0s;
         }
       }
     }
