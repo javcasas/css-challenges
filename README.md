@@ -18,22 +18,37 @@
 * [ ] Flexbox
 
 * [ ] Advanced selectors
-  * [ ] Automatically set to red all buttons that have "delete" in them
+  * [X] Automatically set to red all buttons that have "delete" in them
+  * [X] Rounded-border buttons that lose roundness when put together.
 
 * [ ] Chained selectors:
   * [ ] Bargraph. On hover over the items in the key, the corresponding columns are highlighted.
 
 * [ ] CSS ::before and ::after
 
-* [ ] `calc`
+* [ ] Dynamic properties
+  * [ ] `calc`
+
+* [ ] Adavanced SCSS:
+  * [ ] Mixins
+  * [ ] Variables
+  * [ ] Predefined functions http://sass-lang.com/documentation/Sass/Script/Functions.html
+    * [ ] http://sass-lang.com/documentation/Sass/Script/Functions.html
+      * [ ] Color-mixing functions: mix, hsl, adjust-hue, lighten, darken, saturate, desaturate, grayscale, complement, invert
+      * [ ] Numeric functions: percentage, round, min, max, random
 
 ## Advanced
+* [ ] Purely parametric page style
+  * [ ] Colour is set in a SCSS variable, and applied to different parts using colour-mixing functions
+  * [ ] Padding/margin/whitespace is set in a SCSS variable, and applied to different parts using calc and general SCSS functions
+
 * [ ] Futuristic UI
   * [ ] Slow animated deploy of page
 
 * [ ] 3D
-  * [ ] Test svg-based transparency
-  * [ ] Test png-based transparency
+  * [ ] Test transparency (the final color depends on the order of the rendered elements)
+    * [ ] Test svg-based transparency
+    * [ ] Test png-based transparency
 
 * [ ] Animations
 
@@ -50,4 +65,3 @@
 * [ ] Selector to select parent
   * Apparently it's impossible.
 
-* [ ] Rounded-border buttons that lose roundness when put together.
