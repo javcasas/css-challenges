@@ -1,16 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HwHyperspace from './hw-hyperspace';
+import {HyperspaceIn, HyperspaceOut} from './hw-hyperspace';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HwHyperspace>
+        <HyperspaceIn>
           adfsdfasdfasdgdfag
-        </HwHyperspace>
+        </HyperspaceIn>
+        <div style={{height: "30px", width: "100%"}} />
+        <br />
+        <HyperspaceOut>
+          adfsdfasdfasdgdfag
+        </HyperspaceOut>
       </header>
     </div>
   );
